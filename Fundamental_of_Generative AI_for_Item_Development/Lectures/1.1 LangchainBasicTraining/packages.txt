@@ -1,0 +1,32 @@
+pip install langchain
+pip install langchain-community
+pip install langchain-core
+# OpenAI
+pip install langchain-openai
+
+# Anthropic (Claude)
+pip install langchain-anthropic
+
+# Hugging Face
+pip install langchain-huggingface
+
+# Google
+pip install langchain-google-genai
+
+# For document loading and processing
+pip install pypdf
+pip install python-docx
+pip install beautifulsoup4
+
+# For vector databases
+pip install chromadb
+pip install faiss-cpu
+
+# For web scraping
+pip install requests
+pip install selenium
+
+# For development
+pip install python-dotenv
+pip install jupyter
+pip install streamlit

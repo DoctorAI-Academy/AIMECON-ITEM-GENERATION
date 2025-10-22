@@ -1,0 +1,42 @@
+# Core packages for AIME Item Generation Project
+# Install these first, then run: pip freeze > requirements.txt
+
+# Core LangChain packages
+langgraph
+langchain
+langchain-community
+langchain-openai
+langchain-google-genai
+langchain-groq
+
+
+# AI/ML providers
+openai
+google-generativeai
+tavily-python
+
+# Environment and configuration
+python-dotenv
+
+# Data processing
+pandas
+numpy
+requests
+
+# PDF processing (for your data folder)
+PyPDF2
+pdfplumber
+
+# Text processing
+tiktoken
+
+# Vector databases and embeddings
+faiss-cpu
+sentence-transformers
+# chromadb
+
+# Optional: Additional utilities (uncomment if needed)
+# tqdm
+# transformers
+
+

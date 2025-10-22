@@ -1,0 +1,81 @@
+from langchain.agents import create_openai_functions_agent, AgentExecutor
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain.tools import tool
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+@tool
+def get_curriculum_standards(grade_level: str, subject: str) -> str:
+    """Get curriculum standards for a specific grade level and subject."""
+    # This is a mock function - in reality, you'd connect to a real API
+    standards = {
+        "8th_grade_math": [
+            "8.EE.A.1 - Work with radicals and integer exponents",
+            "8.EE.B.5 - Graph proportional relationships",
+            "8.EE.C.7 - Solve linear equations in one variable"
+        ],
+        "8th_grade_science": [
+            "MS-PS1-1 - Develop atomic theory model",
+            "MS-PS1-3 - Analyze chemical reactions",
+            "MS-LS1-5 - Construct explanation of photosynthesis"
+        ]
+    }
+    
+    key = f"{grade_level.lower().replace(' ', '_')}_{subject.lower()}"
+    return str(standards.get(key, "Standards not found"))
+
+@tool
+def validate_question_difficulty(question: str, target_difficulty: str) -> str:
+    """Validate if a question matches the target difficulty level."""
+    # Mock validation - in reality, you'd use ML models or other methods
+    difficulty_indicators = {
+        "easy": ["simple", "basic", "one-step"],
+        "medium": ["multi-step", "apply", "analyze"],
+        "hard": ["complex", "synthesize", "evaluate"]
+    }
+    
+    question_lower = question.lower()
+    for difficulty, indicators in difficulty_indicators.items():
+        if any(indicator in question_lower for indicator in indicators):
+            return f"Question appears to be {difficulty} level"
+    
+    return f"Unable to determine difficulty level"
+
+def agent_example():
+    """Create an agent that can use educational tools"""
+    
+    # Initialize LLM
+    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    
+    # Create tools list
+    tools = [get_curriculum_standards, validate_question_difficulty]
+    
+    # Create prompt template
+    prompt = ChatPromptTemplate.from_messages([
+        ("system", """You are an educational content expert. You help create 
+        curriculum-aligned questions and validate their appropriateness.
+        Use the available tools to gather information and validate content."""),
+        ("user", "{input}"),
+        MessagesPlaceholder(variable_name="agent_scratchpad"),
+    ])
+    
+    # Create agent
+    agent = create_openai_functions_agent(llm, tools, prompt)
+    
+    # Create agent executor
+    agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+    
+    # Use the agent
+    result = agent_executor.invoke({
+        "input": """Create a question about 8th grade math that aligns with curriculum 
+        standards and validate that it's at medium difficulty level."""
+    })
+    
+    print("Agent Result:")
+    print(result["output"])
+
+if __name__ == "__main__":
+    agent_example()
