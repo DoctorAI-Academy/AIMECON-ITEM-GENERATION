@@ -9,7 +9,7 @@ This repository contains materials for the AIME-Con 2025 training session on usi
 - Learn fine-tuning and agentic system basics.  
 - Apply Python tools (Hugging Face, PyTorch, LangChain) for item development.  
 
-## Requirements  
+## Requirement  
 - Laptop.
 
 ## Presenters  
@@ -17,7 +17,7 @@ This repository contains materials for the AIME-Con 2025 training session on usi
 
 Website: [henrymakinde.com](https://henrymakinde.com)  
 
-**Hope O. Adegoke (UNC Greensboro) - [hopeadegoke@uncg.edu](mailto:hopeadegoke@uncg.edu) 
+**Hope O. Adegoke (UNC Greensboro)** - [hopeadegoke@uncg.edu](mailto:hopeadegoke@uncg.edu) 
 
 Website: [hopeadegoke.com](https://hopeadegoke.com)  
 
