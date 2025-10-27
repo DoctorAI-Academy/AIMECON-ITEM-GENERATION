@@ -1,0 +1,53 @@
+# Core packages for AIME Item Generation Project
+# Install these first, then run: pip freeze > requirements.txt
+
+# Core LangChain packages
+# Core orchestration
+langgraph>=0.2.20
+pydantic>=2,<3
+
+# LangChain (Pydantic v2 era)
+langchain>=0.3.27,<0.4
+langchain-community>=0.3.27,<0.4
+langchain-openai>=0.3,<0.4
+langchain-google-genai<3
+langchain-huggingface>=0.3,<0.4
+langchain-groq>=0.3,<0.4
+langchain-tavily>=0.2
+langgraph[visualization]>=0.2.20
+
+# Google SDK (new)
+google-genai>=1.0.0
+
+# Other providers/tools
+openai>=1.40.0
+tavily-python
+
+# Env/config
+python-dotenv
+
+# Data / HTTP
+pandas
+numpy
+requests
+
+# PDF
+PyPDF2
+pdfplumber
+pypdf
+
+# Text utils
+tiktoken
+
+# Vectors / embeddings
+faiss-cpu
+sentence-transformers
+chromadb
+
+
+# Optional: Additional utilities (uncomment if needed)
+# tqdm
+# transformers
+
+jupyterlab_widgets
+ipywidgets
