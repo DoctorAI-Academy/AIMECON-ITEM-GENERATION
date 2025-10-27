@@ -15,10 +15,10 @@ This repository contains materials for the AIME-Con 2025 training session on usi
 ## Presenters  
 **Henry S. Makinde (UNC Greensboro)** - [hsmakinde@uncg.edu](mailto:hsmakinde@uncg.edu)
 
-Website: [henrymakinde.com](https://henrymakinde.com)  
+Website: [henrymakinde.com](https://www.henrymakinde.com)  
 
 **Hope O. Adegoke (UNC Greensboro)** - [hopeadegoke@uncg.edu](mailto:hopeadegoke@uncg.edu) 
 
-Website: [hopeadegoke.com](https://hopeadegoke.com)  
+Website: [hopeadegoke.com](https://www.hopeadegoke.com)  
 
 **Mubarak O. Mojoyinola (University of Iowa)** - [mubarakmojoyinola@uiowa.edu](mailto:mubarakmojoyinola@uiowa.edu)  
